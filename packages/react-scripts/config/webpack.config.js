@@ -507,13 +507,32 @@ module.exports = function(webpackEnv) {
             {
               test: lessRegex,
               exclude: lessModuleRegex,
-              use: getStyleLoaders(
+              // use: getStyleLoaders(
+              //   {
+              //     importLoaders: 2,
+              //     sourceMap: isEnvProduction && shouldUseSourceMap,
+              //   },
+              //   'less-loader'
+              // ),
+
+              // try another way
+              use: [
+                require.resolve('style-loader'),
                 {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 1,
+                  },
                 },
-                'less-loader'
-              ),
+                {
+                  loader: require.resolve('less-loader'),
+                  options: {
+                    // importLoaders: 1,
+                    javascriptEnabled: true,
+                  },
+                },
+              ],
+
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
@@ -524,15 +543,33 @@ module.exports = function(webpackEnv) {
             // using the extension .module.less
             {
               test: lessModuleRegex,
-              use: getStyleLoaders(
+              // use: getStyleLoaders(
+              //   {
+              //     importLoaders: 2,
+              //     sourceMap: isEnvProduction && shouldUseSourceMap,
+              //     modules: true,
+              //     getLocalIdent: getCSSModuleLocalIdent,
+              //   },
+              //   'less-loader'
+              // ),
+
+              // try another way
+              use: [
+                require.resolve('style-loader'),
                 {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
+                  loader: require.resolve('css-loader'),
+                  options: {
+                    importLoaders: 1,
+                  },
                 },
-                'less-loader'
-              ),
+                {
+                  loader: require.resolve('less-loader'),
+                  options: {
+                    // importLoaders: 1,
+                    javascriptEnabled: true,
+                  },
+                },
+              ],
             },
             // hieu-react-scripts end
             // "file" loader makes sure those assets get served by WebpackDevServer.
