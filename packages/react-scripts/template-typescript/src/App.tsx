@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../public/logo-appota.png';
+import logo from './icon-appota.png';
 import './App.css';
 
 class App extends Component {
