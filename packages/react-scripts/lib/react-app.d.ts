@@ -4,8 +4,8 @@
 
 declare namespace NodeJS {
   interface ProcessEnv {
-    NODE_ENV: 'development' | 'production' | 'test'
-    PUBLIC_URL: string
+    NODE_ENV: 'development' | 'production' | 'test';
+    PUBLIC_URL: string;
   }
 }
 
@@ -58,9 +58,9 @@ declare module '*.module.sass' {
   export default classes;
 }
 
-// hello-larkintuckerllc-react-scripts start
+// hieu-react-scripts start
 declare module '*.module.less' {
   const classes: { [key: string]: string };
   export default classes;
 }
-// hello-larkintuckerllc-react-scripts end
+// hieu-react-scripts end

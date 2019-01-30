@@ -50,10 +50,10 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 
-// hello-larkintuckerllc-react-scripts start
+// hieu-react-scripts start
 const lessRegex = /\.less$/;
 const lessModuleRegex = /\.module\.less$/;
-// hello-larkintuckerllc-react-scripts end
+// hieu-react-scripts end
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -500,7 +500,7 @@ module.exports = function(webpackEnv) {
                 'sass-loader'
               ),
             },
-            // hello-larkintuckerllc-react-scripts start
+            // hieu-react-scripts start
             // Opt-in support for Less (using .less extensions).
             // By default we support Less Modules with the
             // extensions .module.less
@@ -534,7 +534,7 @@ module.exports = function(webpackEnv) {
                 'less-loader'
               ),
             },
-            // hello-larkintuckerllc-react-scripts end
+            // hieu-react-scripts end
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
